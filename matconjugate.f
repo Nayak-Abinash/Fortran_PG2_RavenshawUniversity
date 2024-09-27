@@ -4,7 +4,9 @@
       integer i,j,k
       real A(3,3),B(3,3)
       open(unit=1,file="matA.dat")
-      read(1,*) A
+      do i=1,3
+      	read(1,*) (A(i,j),j=1,3)
+      enddo
       write(*,*) "The given Matrix:"
       do i=1,3
       	write(*,*) (A(i,j),j=1,3)

@@ -2,23 +2,17 @@
       program matalgbra
       implicit none
       integer i,j,k
-      real Ap(3,3),A(3,3),Bp(3,3),B(3,3),ApB(3,3),AtB(3,3)
+      real A(3,3),B(3,3),ApB(3,3),AtB(3,3)
       real s
       
       open(unit=1,file="matA.dat")
-      read(1,*) Ap
       do i=1,3
-       do j=1,3
-        A(i,j)=Ap(j,i)
-       enddo
+       read(1,*) (A(i,j),j=1,3)
       enddo
       
       open(unit=2,file="modmatA.dat")
-      read(2,*) Bp
       do i=1,3
-       do j=1,3
-        B(i,j)=Bp(j,i)
-       enddo
+       read(2,*) (B(i,j),j=1,3)
       enddo
       
       do i=1,3

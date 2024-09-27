@@ -2,13 +2,10 @@
       program matrixio
       implicit none
       integer i,j
-      integer Ap(3,3),A(3,3),B(3,3)
+      integer A(3,3),B(3,3)
       open (unit=1,file="matA.dat")
-      read (1,*) Ap
       do i=1,3
-      	do j=1,3
-      	   A(i,j)=Ap(j,i)
-      	enddo
+      	read(1,*) (A(i,j),j=1,3)
       enddo
       
       write (*,*) "The Matrix A:"
